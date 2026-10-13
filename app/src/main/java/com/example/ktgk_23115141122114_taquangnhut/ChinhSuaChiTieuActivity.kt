@@ -34,7 +34,6 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
     }
 
     private fun nhanDuLieuCu_114() {
-        // Nhận dữ liệu hiện tại để hiển thị sẵn lên các ô nhập
         edtSuaTen_114.setText(intent.getStringExtra("TEN_CU"))
         edtSuaSoTien_114.setText(intent.getStringExtra("SO_TIEN_CU"))
         edtSuaGhiChu_114.setText(intent.getStringExtra("GHI_CHU_CU"))
@@ -42,11 +41,11 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
 
     private fun suKienClick_114() {
         btnLuu_114.setOnClickListener {
-            val intentKetQua_114 = Intent().apply {
-                putExtra("TEN_MOI", edtSuaTen_114.text.toString().trim())
-                putExtra("SO_TIEN_MOI", edtSuaSoTien_114.text.toString().trim())
-                putExtra("GHI_CHU_MOI", edtSuaGhiChu_114.text.toString().trim())
-            }
+            val intentKetQua_114 = Intent()
+            intentKetQua_114.putExtra("TEN_MOI", edtSuaTen_114.text.toString().trim())
+            intentKetQua_114.putExtra("SO_TIEN_MOI", edtSuaSoTien_114.text.toString().trim())
+            intentKetQua_114.putExtra("GHI_CHU_MOI", edtSuaGhiChu_114.text.toString().trim())
+
             setResult(Activity.RESULT_OK, intentKetQua_114)
             finish()
         }
