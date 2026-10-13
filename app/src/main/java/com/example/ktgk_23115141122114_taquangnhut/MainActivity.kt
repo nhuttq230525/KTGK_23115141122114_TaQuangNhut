@@ -50,8 +50,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnXemChiTiet_114.setOnClickListener {
-            // Tạm thời để trống hoặc chuyển màn hình giả lập cho Câu 1
-            Toast.makeText(this, "Chuyển sang màn hình chi tiết (sẽ hoàn thiện ở Câu 2)", Toast.LENGTH_SHORT).show()
+            val ten_114 = edtTenKhoanChi_114.text.toString().trim()
+            val soTienStr_114 = edtSoTien_114.text.toString().trim()
+            val ghiChu_114 = edtGhiChu_114.text.toString().trim()
+
+            // Kiểm tra sơ bộ trước khi chuyển trang
+            if (ten_114.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập tên khoản chi trước khi xem chi tiết!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val intent_114 = Intent(this, ChiTietChiTieuActivity::class.java).apply {
+                putExtra("TEN_KHOAN_CHI", ten_114)
+                putExtra("SO_TIEN", soTienStr_114)
+                putExtra("GHI_CHU", ghiChu_114)
+            }
+            startActivity(intent_114)
         }
     }
 }
