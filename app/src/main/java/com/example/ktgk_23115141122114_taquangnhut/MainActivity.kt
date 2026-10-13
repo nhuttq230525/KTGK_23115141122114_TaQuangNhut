@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        supportActionBar?.title = "Tạ Quang Nhựt - 114 - Quản lý chi tiêu cá nhân"
         anhXa_114()
         suKienClick_114()
     }
