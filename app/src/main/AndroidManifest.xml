@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KTGK_23115141122114_TaQuangNhut">
         <activity
+            android:name=".ChinhSuaChiTieuActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChiTietChiTieuActivity"
             android:exported="false" />
         <activity
